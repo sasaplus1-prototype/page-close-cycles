@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>page close cycles</title>
+  </head>
+  <body>
+    <p>See console</p>
+    <a href="/">jump to /</a>
+    <script>
+      (function(){
+        'use strict';
+
+        window.addEventListener('pageshow', function() {
+          console.log('pageshow: ' + new Date);
+        }, false);
+
+        window.addEventListener('pagehide', function() {
+          console.log('pagehide: ' + new Date);
+        }, false);
+
+        window.addEventListener('unload', function() {
+          console.log('unload: ' + new Date);
+        }, false);
+
+        window.addEventListener('beforeunload', function() {
+          console.log('beforeunload: ' + new Date);
+        }, false);
+
+        document.addEventListener('visibilitychange', function() {
+          console.log('visibilitychange: ' + document.visibilityState + ' ' + new Date);
+        }, false);
+
+        document.addEventListener('freeze', function() {
+          console.log('freeze: ' + new Date);
+        }, false);
+
+        document.addEventListener('resume', function() {
+          console.log('resume: ' + new Date);
+        }, false);
+      }());
+    </script>
+  </body>
+</html>
