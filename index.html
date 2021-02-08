@@ -14,31 +14,31 @@
         'use strict';
 
         window.addEventListener('pageshow', function() {
-          console.log('pageshow: ' + new Date);
+          console.log('pageshow: ' + new Date() + ' ' + Date.now());
         }, false);
 
         window.addEventListener('pagehide', function() {
-          console.log('pagehide: ' + new Date);
+          console.log('pagehide: ' + new Date() + ' ' + Date.now());
         }, false);
 
         window.addEventListener('unload', function() {
-          console.log('unload: ' + new Date);
+          console.log('unload: ' + new Date() + ' ' + Date.now());
         }, false);
 
         window.addEventListener('beforeunload', function() {
-          console.log('beforeunload: ' + new Date);
+          console.log('beforeunload: ' + new Date() + ' ' + Date.now());
         }, false);
 
         document.addEventListener('visibilitychange', function() {
-          console.log('visibilitychange: ' + document.visibilityState + ' ' + new Date);
+          console.log('visibilitychange: ' + document.visibilityState + ' ' + new Date() + ' ' + Date.now());
         }, false);
 
         document.addEventListener('freeze', function() {
-          console.log('freeze: ' + new Date);
+          console.log('freeze: ' + new Date() + ' ' + Date.now());
         }, false);
 
         document.addEventListener('resume', function() {
-          console.log('resume: ' + new Date);
+          console.log('resume: ' + new Date() + ' ' + Date.now());
         }, false);
       }());
     </script>
